@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A62D6F7-619E-4783-8A6D-99F78699669C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nintemulator.GBC</RootNamespace>
+    <AssemblyName>Nintemulator.GBC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boards\Board.cs" />
+    <Compile Include="Boards\BoardManager.cs" />
+    <Compile Include="Boards\NintendoMBC1.cs" />
+    <Compile Include="Boards\NintendoMBC2.cs" />
+    <Compile Include="Boards\NintendoMBC3.cs" />
+    <Compile Include="Boards\NintendoMBC5.cs" />
+    <Compile Include="CPU\Cpu.cs" />
+    <Compile Include="CPU\Cpu.Extended.cs" />
+    <Compile Include="CPU\Cpu.Standard.cs" />
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameboyColor.cs" />
+    <Compile Include="GameboyColor.Memory.cs" />
+    <Compile Include="GPU\Gpu.cs" />
+    <Compile Include="Lcd.cs" />
+    <Compile Include="Pad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sio.cs" />
+    <Compile Include="SPU\Spu.Channel.cs" />
+    <Compile Include="SPU\Spu.ChannelNoi.cs" />
+    <Compile Include="SPU\Spu.ChannelSq1.cs" />
+    <Compile Include="SPU\Spu.ChannelSq2.cs" />
+    <Compile Include="SPU\Spu.ChannelWav.cs" />
+    <Compile Include="SPU\Spu.cs" />
+    <Compile Include="SPU\Spu.Duration.cs" />
+    <Compile Include="SPU\Spu.Envelope.cs" />
+    <Compile Include="SPU\Spu.Mixer.cs" />
+    <Compile Include="Tma.cs" />
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nintemulator.Shared\Nintemulator.Shared.csproj">
+      <Project>{237fa335-b6a2-4ce3-b0da-ea65f3886972}</Project>
+      <Name>Nintemulator.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

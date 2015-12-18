@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73940FAF-61B2-4463-A86E-5F3DE0281DD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nintemulator.GB</RootNamespace>
+    <AssemblyName>Nintemulator.GB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boards\Board.cs" />
+    <Compile Include="Boards\BoardManager.cs" />
+    <Compile Include="Boards\NintendoMBC1.cs" />
+    <Compile Include="Boards\NintendoMBC2.cs" />
+    <Compile Include="Boards\NintendoMBC3.cs" />
+    <Compile Include="Boards\NintendoMBC5.cs" />
+    <Compile Include="CPU\Cpu.cs" />
+    <Compile Include="CPU\Debugging\Disassembler.cs" />
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gameboy.cs" />
+    <Compile Include="Gameboy.Memory.cs" />
+    <Compile Include="GPU\Gpu.cs" />
+    <Compile Include="Lcd.cs" />
+    <Compile Include="Pad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPU\Spu.Channel.cs" />
+    <Compile Include="SPU\Spu.ChannelNoi.cs" />
+    <Compile Include="SPU\Spu.ChannelSq1.cs" />
+    <Compile Include="SPU\Spu.ChannelSq2.cs" />
+    <Compile Include="SPU\Spu.ChannelWav.cs" />
+    <Compile Include="SPU\Spu.cs" />
+    <Compile Include="SPU\Spu.Duration.cs" />
+    <Compile Include="SPU\Spu.Envelope.cs" />
+    <Compile Include="SPU\Spu.Mixer.cs" />
+    <Compile Include="Tma.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nintemulator.Shared\Nintemulator.Shared.csproj">
+      <Project>{237FA335-B6A2-4CE3-B0DA-EA65F3886972}</Project>
+      <Name>Nintemulator.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

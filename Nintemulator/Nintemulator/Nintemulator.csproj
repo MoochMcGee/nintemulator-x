@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E63AFF7-0F9F-4B0E-A8A9-E8D1C010A465}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nintemulator</RootNamespace>
+    <AssemblyName>Nintemulator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPath.Designer.cs">
+      <DependentUpon>FormPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPath.resx">
+      <DependentUpon>FormPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nintemulator.GameboyAdvance\Nintemulator.GBA.csproj">
+      <Project>{ff4c16fb-7dea-4964-8dec-1dbb5113b80a}</Project>
+      <Name>Nintemulator.GBA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.GameboyColor\Nintemulator.GBC.csproj">
+      <Project>{2a62d6f7-619e-4783-8a6d-99f78699669c}</Project>
+      <Name>Nintemulator.GBC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.Gameboy\Nintemulator.GB.csproj">
+      <Project>{73940FAF-61B2-4463-A86E-5F3DE0281DD9}</Project>
+      <Name>Nintemulator.GB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.N64\Nintemulator.N64.csproj">
+      <Project>{cbb2b6ca-380c-4b46-934d-917ef8fcb76d}</Project>
+      <Name>Nintemulator.N64</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.NDS\Nintemulator.NDS.csproj">
+      <Project>{3e08a9a5-7559-4ea3-be9f-a4f623257ede}</Project>
+      <Name>Nintemulator.NDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.NES\Nintemulator.FC.csproj">
+      <Project>{A2142589-F1BB-4D02-ABE1-EDC377B416E8}</Project>
+      <Name>Nintemulator.FC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.PKM\Nintemulator.PKM.csproj">
+      <Project>{1e45fb87-2507-41d8-8b96-e318988492c1}</Project>
+      <Name>Nintemulator.PKM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.Shared\Nintemulator.Shared.csproj">
+      <Project>{237FA335-B6A2-4CE3-B0DA-EA65F3886972}</Project>
+      <Name>Nintemulator.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nintemulator.SNES\Nintemulator.SFC.csproj">
+      <Project>{c7980964-f3d7-4287-b11e-c585d89df949}</Project>
+      <Name>Nintemulator.SFC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

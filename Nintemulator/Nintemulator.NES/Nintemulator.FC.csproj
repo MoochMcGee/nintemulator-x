@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2142589-F1BB-4D02-ABE1-EDC377B416E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nintemulator.FC</RootNamespace>
+    <AssemblyName>Nintemulator.FC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boards\Bandai\BandaiLZ93D50.cs" />
+    <Compile Include="Boards\Board.cs" />
+    <Compile Include="Boards\BoardManager.cs" />
+    <Compile Include="Boards\Camerica\CamericaBF9093.cs" />
+    <Compile Include="Boards\Camerica\CamericaBF9096.cs" />
+    <Compile Include="Boards\Discreet\ANROM.cs" />
+    <Compile Include="Boards\Discreet\AOROM.cs" />
+    <Compile Include="Boards\Discreet\CNROM.cs" />
+    <Compile Include="Boards\Discreet\CPROM.cs" />
+    <Compile Include="Boards\Discreet\UNROM.cs" />
+    <Compile Include="Boards\Discreet\UOROM.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC1.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC2.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC3.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC4.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC6.cs" />
+    <Compile Include="Boards\Konami\KonamiVRC7.cs" />
+    <Compile Include="Boards\Namcot\Namcot163.cs" />
+    <Compile Include="Boards\Nintendo\NintendoMMC1.cs" />
+    <Compile Include="Boards\Nintendo\NintendoMMC2.cs" />
+    <Compile Include="Boards\Nintendo\NintendoMMC3.cs" />
+    <Compile Include="Boards\Nintendo\NintendoMMC4.cs" />
+    <Compile Include="Boards\Discreet\NROM128.cs" />
+    <Compile Include="Boards\Discreet\NROM256.cs" />
+    <Compile Include="Boards\Nintendo\NintendoMMC5.cs" />
+    <Compile Include="Boards\Unlicensed\ColorDreams74x377.cs" />
+    <Compile Include="Boards\Unlicensed\MltAction52.cs" />
+    <Compile Include="CPU\Cpu.Alu.cs" />
+    <Compile Include="CPU\Cpu.cs" />
+    <Compile Include="CPU\Cpu.Memory.cs" />
+    <Compile Include="CPU\Debugging\Disassembler.cs" />
+    <Compile Include="FormDebugger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDebugger.Designer.cs">
+      <DependentUpon>FormDebugger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GPU\Gpu.Bg.cs" />
+    <Compile Include="GPU\Gpu.cs" />
+    <Compile Include="GPU\Gpu.Memory.cs" />
+    <Compile Include="GPU\Gpu.Sp.cs" />
+    <Compile Include="Famicom.cs" />
+    <Compile Include="FamicomDatabase.cs" />
+    <Compile Include="PAD\Pad.cs" />
+    <Compile Include="PAD\StandardController.cs" />
+    <Compile Include="Palettes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPU\Spu.Channel.cs" />
+    <Compile Include="SPU\Spu.ChannelDmc.cs" />
+    <Compile Include="SPU\Spu.ChannelNoi.cs" />
+    <Compile Include="SPU\Spu.ChannelSqr.cs" />
+    <Compile Include="SPU\Spu.ChannelTri.cs" />
+    <Compile Include="SPU\Spu.cs" />
+    <Compile Include="SPU\Spu.Duration.cs" />
+    <Compile Include="SPU\Spu.Envelope.cs" />
+    <Compile Include="SPU\Spu.External.cs" />
+    <Compile Include="SPU\Spu.Mixer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormDebugger.resx">
+      <DependentUpon>FormDebugger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nintemulator.Shared\Nintemulator.Shared.csproj">
+      <Project>{237FA335-B6A2-4CE3-B0DA-EA65F3886972}</Project>
+      <Name>Nintemulator.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SPU\Spu.Sequence.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
